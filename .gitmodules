@@ -1,2 +1,3 @@
-[submodule "projects/InstructERC"]
+[submodule "InstructERC"]
+    path = projects/InstructERC
     url = git@github.com:LIN-SHANG/InstructERC.git
