@@ -1,3 +1,11 @@
-[submodule "InstructERC"]
-    path = projects/InstructERC
-    url = git@github.com:LIN-SHANG/InstructERC.git
+[submodule "projects/InstructERC"]
+	path = projects/InstructERC
+	url = https://github.com/emotion-recognition-reproduce/InstructERC.git
+
+[submodule "projects/SPCL"]
+	path = projects/SPCL
+	url = https://github.com/emotion-recognition-reproduce/SPCL.git
+
+[submodule "projects/FacialMMT"]
+	path = projects/FacialMMT
+	url = https://github.com/emotion-recognition-reproduce/FacialMMT.git
