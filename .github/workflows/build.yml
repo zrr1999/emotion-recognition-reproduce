@@ -27,7 +27,7 @@ jobs:
           repository: 'BoneDocument'
       
       - name: Link typst packages
-        run: 
+        run: |
           mkdir -p ~/.local/share/typst/packages/local/bone-document/
           ln -s BoneDocument/typst ~/.local/share/typst/packages/local/bone-document/0.1.0
         
