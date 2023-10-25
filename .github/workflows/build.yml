@@ -28,6 +28,7 @@ jobs:
       
       - name: Link typst packages
         run: 
+          mkdir -p ~/.local/share/typst/packages/local/bone-document/
           ln -s BoneDocument/typst ~/.local/share/typst/packages/local/bone-document/0.1.0
         
       - name: Compile Typst files
