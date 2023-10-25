@@ -26,13 +26,11 @@ jobs:
           owner: 'zrr1999'
           repository: 'BoneDocument'
       
-      - name: Link typst packages
+      - name: Compile Typst files
         run: |
           mkdir -p ~/.local/share/typst/packages/local/bone-document/
-          ln -s BoneDocument/typst ~/.local/share/typst/packages/local/bone-document/0.1.0
-        
-      - name: Compile Typst files
-        run: typst compile reports/main.typ
+          ln -s BoneDocument ~/.local/share/typst/packages/local/bone-document/0.1.0
+          typst compile reports/main.typ
 
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
