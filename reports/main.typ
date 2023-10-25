@@ -1,7 +1,7 @@
 #import "@local/bone-document:0.1.0": document-init
 
 #show: document-init.with(
-  title: "多模态前沿论文复现情况",
+  title: "多模态情绪评估前沿论文复现情况",
   author: "詹荣瑞"
 )
 
@@ -16,13 +16,20 @@
 
 = InstructERC 复现情况
 
-== microsoft/DeepSpeed
+== 项目复现过程
++ 下载模型及数据集
++ 下载 LLM 模型
++ 修复路径问题
+
+== 项目主要依赖介绍
+=== microsoft/DeepSpeed
 DeepSpeed is a deep learning optimization library that makes distributed training and inference easy, efficient, and effective.
 
-== huggingface/peft
+=== huggingface/peft
 PEFT: State-of-the-art Parameter-Efficient Fine-Tuning.
 
 
 
 = FacialMMT 复现情况
+
 = SPCL 复现情况
