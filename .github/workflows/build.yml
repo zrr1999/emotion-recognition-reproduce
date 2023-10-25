@@ -11,12 +11,25 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      
       - name: Setup Typst
         uses: yusancky/setup-typst@v2
         id: setup-typst
         with:
           version: 'v0.8.0'
       
+      - name: Clone zrr1999/BoneDocument
+        uses: GuillaumeFalourd/clone-github-repo-action@v2.2
+        with:
+          depth: 1
+          branch: 'main'
+          owner: 'zrr1999'
+          repository: 'BoneDocument'
+      
+      - name: Link typst packages
+        run: 
+          ln -s BoneDocument/typst ~/.local/share/typst/packages/local/bone-document/0.1.0
+        
       - name: Compile Typst files
         run: typst compile reports/main.typ
 
