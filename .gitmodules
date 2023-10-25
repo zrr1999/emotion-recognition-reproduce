@@ -9,3 +9,6 @@
 [submodule "projects/FacialMMT"]
 	path = projects/FacialMMT
 	url = https://github.com/emotion-recognition-reproduce/FacialMMT.git
+[submodule "projects/erc"]
+	path = projects/erc
+	url = https://github.com/emotion-recognition-reproduce/erc
