@@ -18,19 +18,27 @@ jobs:
         with:
           version: 'v0.8.0'
 
-      - name: Clone zrr1999/BoneDocument
+      - name: Clone BoneDocument/BoneDocument
         uses: GuillaumeFalourd/clone-github-repo-action@v2.2
         with:
           depth: 1
           branch: 'main'
-          owner: 'zrr1999'
+          owner: 'BoneDocument'
           repository: 'BoneDocument'
+
+      - name: Clone BoneDocument/fonts
+        uses: GuillaumeFalourd/clone-github-repo-action@v2.2
+        with:
+          depth: 1
+          branch: 'main'
+          owner: 'BoneDocument'
+          repository: 'fonts'
 
       - name: Compile Typst files
         run: |
           mkdir -p ~/.local/share/typst/packages/local/bone-document/
           ln -s $(pwd)/BoneDocument ~/.local/share/typst/packages/local/bone-document/0.1.0
-          typst compile --font-path="~/.local/share/typst/packages/local/bone-document/0.1.0/fonts/" reports/main.typ
+          typst compile --font-path="./fonts/" reports/main.typ
 
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
