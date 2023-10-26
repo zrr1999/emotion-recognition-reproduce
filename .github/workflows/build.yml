@@ -30,7 +30,7 @@ jobs:
         run: |
           mkdir -p ~/.local/share/typst/packages/local/bone-document/
           ln -s $(pwd)/BoneDocument ~/.local/share/typst/packages/local/bone-document/0.1.0
-          typst compile reports/main.typ
+          typst compile --font-path="~/.local/share/typst/packages/local/bone-document/0.1.0/fonts/" reports/main.typ
 
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
