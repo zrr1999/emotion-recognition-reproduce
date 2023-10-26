@@ -40,11 +40,11 @@ jobs:
 
       - name: Get current date
         id: date
-        run: echo "DATE=$(date +%Y-%m-%d-%H:%M)" >> $GITHUB_ENV
+        run: echo "DATE=$(date +%Y-%m-%d)" >> $GITHUB_ENV
 
       - name: Release
         uses: softprops/action-gh-release@v1
         if: github.ref_type == 'tag'
         with:
           name: "复现周期进展报告——${{ env.DATE }}"
-          files: main.pdf
+          files: reports/main.pdf
