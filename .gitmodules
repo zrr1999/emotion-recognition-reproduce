@@ -18,3 +18,6 @@
 [submodule "projects/UniMSE"]
 	path = projects/UniMSE
 	url = https://github.com/emotion-recognition-reproduce/UniMSE
+[submodule "projects/CoMPM"]
+	path = projects/CoMPM
+	url = https://github.com/emotion-recognition-reproduce/CoMPM
