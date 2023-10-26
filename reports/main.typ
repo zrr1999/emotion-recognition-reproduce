@@ -2,7 +2,7 @@
 #import "@local/bone-document:0.1.0": document-init
 #import "utils.typ": include-section
 
-#show: document-init.with(title: "多模态情绪评估前沿论文复现情况", author: "詹荣瑞")
+#show: document-init.with(title: "情绪评估前沿论文复现情况", author: "詹荣瑞")
 
 #let compeleted = {
   [#text(fill: green, weight: "bold")[完成]]
