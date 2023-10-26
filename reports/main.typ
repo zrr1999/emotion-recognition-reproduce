@@ -7,29 +7,44 @@
   author: "詹荣瑞"
 )
 
-#let todo(msg) = {
-  [#text(fill: red, weight: "bold", size: 12pt)[TODO #msg]]
+#let compeleted = {
+  [#text(fill: green, weight: "bold")[完成]]
+}
+
+#let work_in_report = {
+  [#text(fill: blue, weight: "bold")[编写报告]]
+}
+
+#let work_in_program = {
+  [#text(fill: rgb("#0061d9"), weight: "bold")[复现中]]
+}
+
+#let failed = {
+  [#text(fill: red, weight: "bold")[存在问题]]
 }
 
 = 整体情况
+== 整体分析
++ 前 20 名中开源数量有 15 个。
++ 第一名使用 LLM，领先幅度明显。
++ 使用 RoBERTa 的模型有 16 个。
 == 复现进度
-开源数量(15/20)
 
 #table(
   columns: (auto, auto, 1fr, auto),
   inset: 10pt,
   align: horizon,
-  [*模型名称*], [*模型类型*], [*模型特点*], [*复现进度*],
-  [InstructERC], [大模型，多模态], [综合指标领先较多], [完成],
-  [EmoBERTa], [单模态], [], [完成],
+  [*模型名称*], [*模型类型*], [*项目特点*], [*复现进度*],
+  [InstructERC], [多模态，大模型], [基于LLM，综合指标领先较多], [#compeleted],
+  [EmoBERTa], [单模态], [项目有单独的数据集子项目，使用超参数调优], [#compeleted],
+  [FacialMMT], [多模态], [], [#failed],
+  [SPCL], [多模态], [], [#work_in_report],
+  [SACL], [], [], [#work_in_program],
+  [UniMSE], [多模态], [], [#work_in_program],
 )
-
-== 整体分析
-+ 第一名使用 LLM，领先幅度明显。
-+ 使用 RoBERTa 的模型有 16 个。
 
 
 #include-section("InstructERC")
+#include-section("EmoBERTa")
 #include-section("FacialMMT")
 #include-section("SPCL")
-#include-section("EmoBERTa")
