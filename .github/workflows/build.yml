@@ -29,7 +29,7 @@ jobs:
       - name: Compile Typst files
         run: |
           mkdir -p ~/.local/share/typst/packages/local/bone-document/
-          ln -s BoneDocument ~/.local/share/typst/packages/local/bone-document/0.1.0
+          ln -s $(pwd)/BoneDocument ~/.local/share/typst/packages/local/bone-document/0.1.0
           typst compile reports/main.typ
 
       - name: Upload PDF file
