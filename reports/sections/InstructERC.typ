@@ -8,7 +8,6 @@ huggingface-cli download FlagAlpha/Atom-7B-Chat --local-dir models/FlagAlpha/Ato
 
 ```
 
-
 === 修改 shell 文件
 - 替换掉文件开头的激活环境代码
 - deepspeed_config 路径修改成 ./data_utils/deepspeed_config.json
@@ -27,10 +26,10 @@ cd projects/InstructERC/code
 bash train_and_inference_Uni.sh
 ```
 
-
 == 项目依赖
 === microsoft/DeepSpeed
-DeepSpeed is a deep learning optimization library that makes distributed training and inference easy, efficient, and effective.
+DeepSpeed is a deep learning optimization library that makes distributed
+training and inference easy, efficient, and effective.
 
 === huggingface/peft
 PEFT: State-of-the-art Parameter-Efficient Fine-Tuning.

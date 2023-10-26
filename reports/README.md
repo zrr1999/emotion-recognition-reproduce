@@ -4,4 +4,3 @@
 ```bash
 paru -Sy typst
 ```
-

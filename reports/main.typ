@@ -2,10 +2,7 @@
 #import "@local/bone-document:0.1.0": document-init
 #import "utils.typ": include-section
 
-#show: document-init.with(
-  title: "多模态情绪评估前沿论文复现情况",
-  author: "詹荣瑞"
-)
+#show: document-init.with(title: "多模态情绪评估前沿论文复现情况", author: "詹荣瑞")
 
 #let compeleted = {
   [#text(fill: green, weight: "bold")[完成]]
@@ -34,15 +31,35 @@
   columns: (auto, auto, 1fr, auto),
   inset: 10pt,
   align: horizon,
-  [*模型名称*], [*模型类型*], [*项目特点*], [*复现进度*],
-  [InstructERC], [多模态，大模型], [基于LLM，综合指标领先较多], [#compeleted],
-  [EmoBERTa], [单模态], [项目有单独的数据集子项目，使用超参数调优], [#compeleted],
-  [FacialMMT], [多模态], [], [#failed],
-  [SPCL], [多模态], [], [#work_in_report],
-  [SACL], [], [], [#work_in_program],
-  [UniMSE], [多模态], [], [#work_in_program],
+  [*模型名称*],
+  [*模型类型*],
+  [*项目特点*],
+  [*复现进度*],
+  [InstructERC],
+  [多模态，大模型],
+  [基于LLM，综合指标领先较多],
+  [#compeleted],
+  [EmoBERTa],
+  [单模态],
+  [项目有单独的数据集子项目，使用超参数调优],
+  [#compeleted],
+  [FacialMMT],
+  [多模态],
+  [],
+  [#failed],
+  [SPCL],
+  [多模态],
+  [],
+  [#work_in_report],
+  [SACL],
+  [],
+  [],
+  [#work_in_program],
+  [UniMSE],
+  [多模态],
+  [],
+  [#work_in_program],
 )
-
 
 #include-section("InstructERC")
 #include-section("EmoBERTa")
