@@ -12,3 +12,9 @@
 [submodule "projects/erc"]
 	path = projects/erc
 	url = https://github.com/emotion-recognition-reproduce/erc
+[submodule "projects/SACL"]
+	path = projects/SACL
+	url = https://github.com/emotion-recognition-reproduce/SACL
+[submodule "projects/UniMSE"]
+	path = projects/UniMSE
+	url = https://github.com/emotion-recognition-reproduce/UniMSE
