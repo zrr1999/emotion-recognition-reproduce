@@ -21,3 +21,9 @@
 [submodule "projects/CoMPM"]
 	path = projects/CoMPM
 	url = https://github.com/emotion-recognition-reproduce/CoMPM
+[submodule "projects/emotionflow"]
+	path = projects/emotionflow
+	url = https://github.com/emotion-recognition-reproduce/emotionflow
+[submodule "projects/DialogueCRN"]
+	path = projects/DialogueCRN
+	url = https://github.com/emotion-recognition-reproduce/DialogueCRN
