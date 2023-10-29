@@ -1,7 +1,6 @@
 #import emoji: face
 #import "@local/bone-document:0.1.0": document-init
 #import "utils.typ": include-section
-
 #show: document-init.with(title: "情绪评估前沿论文复现情况", author: "詹荣瑞")
 
 #let compeleted = {
@@ -36,15 +35,19 @@
   [InstructERC], [多模态，大模型], [基于LLM，综合指标领先较多], [#compeleted],
   [EmoBERTa], [单模态], [项目有单独的数据集子项目，使用超参数调优], [#compeleted],
   [FacialMMT], [多模态], [], [#failed],
+  [CoMPM], [单模态], [], [#work_in_report],
   [SPCL], [多模态], [], [#work_in_report],
   [SACL-LSTM], [单模态], [], [#work_in_report],
   [UniMSE], [多模态], [], [#work_in_program],
+  [EmotionFlow], [], [], [#work_in_program],
+  [Emotion not One], [], [], [#work_in_program],
+  [DialogueCRN], [], [], [#work_in_program],
 )
 // typstfmt::on
-
 
 #include-section("InstructERC")
 #include-section("EmoBERTa")
 #include-section("FacialMMT")
-#include-section("SPCL")
+#include-section("CoMPM")
+// #include-section("SPCL")
 #include-section("SACL-LSTM")

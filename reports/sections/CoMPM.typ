@@ -1,13 +1,7 @@
 == 项目复现过程
-=== 下载数据集和模型
-```python
-baidupcs download FacialMMT
-
-```
-
-=== 链接数据集和模型
-```sh
-
+=== 修改路径
+在 `model.py` 中修改模型路径 ```python
+model_path = f'~/models/huggingface/{model_type}'
 ```
 
 === 运行脚本
