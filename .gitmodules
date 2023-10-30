@@ -27,3 +27,6 @@
 [submodule "projects/DialogueCRN"]
 	path = projects/DialogueCRN
 	url = https://github.com/emotion-recognition-reproduce/DialogueCRN
+[submodule "projects/TodKat"]
+	path = projects/TodKat
+	url = https://github.com/emotion-recognition-reproduce/TodKat
