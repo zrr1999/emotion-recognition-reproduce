@@ -41,7 +41,7 @@
   [SACL-LSTM], [单模态], [], [#work_in_report],
   [EmotionFlow], [], [], [#work_in_program],
   [Emotion-not-One], [], [], [#work_in_program],
-  [DialogueCRN], [], [], [#work_in_program],
+  [DialogueCRN], [], [], [#work_in_report],
   [TodKat], [单模态], [使用 Transformer 编解码器机制], [#compeleted],
 )
 // typstfmt::on
@@ -53,4 +53,5 @@
 #include-section("CoMPM")
 // #include-section("SPCL")
 #include-section("SACL-LSTM")
+#include-section("DialogueCRN")
 #include-section("TodKat")
