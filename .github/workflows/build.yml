@@ -6,7 +6,7 @@ on:
 permissions:
   contents: write
 jobs:
-  build release:
+  build-release:
     runs-on: ubuntu-latest
     steps:
       - name: Install dependencies
@@ -22,7 +22,7 @@ jobs:
           name: PDF
           path: reports/main.pdf
 
-  build vercel:
+  build-vercel:
     runs-on: ubuntu-latest
     steps:
       - name: Install dependencies

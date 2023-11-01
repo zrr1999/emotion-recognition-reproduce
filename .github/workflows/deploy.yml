@@ -7,7 +7,7 @@ on:
     branches:
       - vercel
 jobs:
-  deploy preview:
+  deploy-preview:
     runs-on: ubuntu-latest
 
     steps:
