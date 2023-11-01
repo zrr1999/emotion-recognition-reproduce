@@ -1,4 +1,6 @@
 name: install
+on:
+  workflow_call
 permissions:
   contents: write
 jobs:
