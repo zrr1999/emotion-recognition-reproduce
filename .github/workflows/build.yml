@@ -6,8 +6,10 @@ on:
 permissions:
   contents: write
 jobs:
-  build-release:
+  install-deps:
     uses: ./.github/workflows/install-deps.yml
+
+  build-release:
     steps:
       - name: Compile typst files
         run: |
