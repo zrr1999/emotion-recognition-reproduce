@@ -67,7 +67,7 @@ jobs:
         run: |
           mkdir preview
           typst compile --font-path="./fonts/" --format=svg reports/main.typ preview/{n}.svg
-          python tools/generate_preview.py
+          python tools/gen_preview.py
 
       - name: Create preview page
         uses: peaceiris/actions-gh-pages@v3
