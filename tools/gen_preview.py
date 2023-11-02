@@ -76,7 +76,8 @@ html = """
 
 env = NativeEnvironment()
 t = env.from_string(html)
-result = t.render(data=os.listdir("preview"))
+svg_paths = sorted(os.listdir("preview"), key=lambda x: int(x.split(".")[0]))
+result = t.render(data=svg_paths)
 
 with open("preview/index.html", "w") as f:
     f.write(result)
