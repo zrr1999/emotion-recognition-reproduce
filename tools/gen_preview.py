@@ -36,10 +36,8 @@ html = """
       pagesContainer.innerHTML = ''; // 清空容器
 
       var svgPath = svgPaths[currentPage];
-      var svgElement = document.createElement('object');
-      svgElement.setAttribute('type', 'image/svg+xml');
-      svgElement.setAttribute('data', svgPath);
-      svgElement.setAttribute('class', 'page');
+      var svgElement = document.createElement('img');
+      svgElement.setAttribute('src', svgPath);
       svgElement.onload = function() {
         svgElement.classList.add('active');
       };
