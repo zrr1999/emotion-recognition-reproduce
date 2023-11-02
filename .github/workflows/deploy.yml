@@ -1,26 +1,71 @@
-name: Vercel Preview Deployment
-env:
-  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+name: release
 on:
   push:
-    branches:
-      - vercel
+    branches: [main]
+permissions:
+  contents: write
 jobs:
-  deploy-preview:
+  build-release:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v3
 
-      - name: Install Vercel CLI
-        run: npm install --global vercel@latest
+      - name: Setup Typst
+        uses: yusancky/setup-typst@v2
+        id: setup-typst
+        with:
+          version: 'v0.8.0'
 
-      - name: Pull Vercel Environment Information
-        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Clone BoneDocument/BoneDocument
+        uses: GuillaumeFalourd/clone-github-repo-action@v2.2
+        with:
+          depth: 1
+          branch: 'main'
+          owner: 'BoneDocument'
+          repository: 'BoneDocument'
 
-      - name: Build Project Artifacts
-        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Clone BoneDocument/fonts
+        uses: GuillaumeFalourd/clone-github-repo-action@v2.2
+        with:
+          depth: 1
+          branch: 'main'
+          owner: 'BoneDocument'
+          repository: 'fonts'
 
-      - name: Deploy Project Artifacts to Vercel
-        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Get current date
+        id: date
+        run: echo "DATE=$(date +%Y-%m-%d)" >> $GITHUB_ENV
+
+      - name: Install Typst Packages
+        run: |
+          mkdir -p ~/.local/share/typst/packages/local/bone-document/
+          ln -s $(pwd)/BoneDocument ~/.local/share/typst/packages/local/bone-document/0.1.0
+
+      - name: Install python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.12
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install jinja2
+
+      - name: Compile typst files and generate preview
+        run: |
+          mkdir preview
+          typst compile --font-path="./fonts/" --format=svg reports/main.typ preview/{n}.svg
+          python tools/gen_preview.py
+
+      - name: Create preview page
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: preview
+          publish_branch: vercel
+          cname: research.bone6.top
+          force_orphan: true
+          commit_message: ':rocket: deploy: '
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'

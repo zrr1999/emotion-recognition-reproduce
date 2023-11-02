@@ -52,31 +52,3 @@ jobs:
         with:
           name: PDF
           path: reports/main.pdf
-
-      - name: Install python
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.12
-
-      - name: Install dependencies
-        run: |
-          pip install --upgrade pip
-          pip install jinja2
-
-      - name: Compile typst files and generate preview
-        run: |
-          mkdir preview
-          typst compile --font-path="./fonts/" --format=svg reports/main.typ preview/{n}.svg
-          python tools/gen_preview.py
-
-      - name: Create preview page
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: preview
-          publish_branch: vercel
-          cname: research.bone6.top
-          force_orphan: true
-          commit_message: ':rocket: deploy: '
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
