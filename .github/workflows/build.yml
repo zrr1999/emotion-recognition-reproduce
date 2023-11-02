@@ -8,7 +8,6 @@ permissions:
 jobs:
   build-release:
     runs-on: ubuntu-latest
-    needs: install-deps
     steps:
       - name: Checkout
         uses: actions/checkout@v3
