@@ -6,9 +6,6 @@ on:
 permissions:
   contents: write
 jobs:
-  install-deps:
-    uses: ./.github/workflows/install-deps.yml
-
   build-release:
     runs-on: ubuntu-latest
     needs: install-deps
