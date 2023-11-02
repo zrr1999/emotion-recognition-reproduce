@@ -10,6 +10,7 @@ jobs:
     uses: ./.github/workflows/install-deps.yml
 
   build-release:
+    needs: install-deps
     steps:
       - name: Compile typst files
         run: |
@@ -22,7 +23,7 @@ jobs:
           path: reports/main.pdf
 
   build-vercel:
-    uses: ./.github/workflows/install-deps.yml
+    needs: install-deps
     steps:
       - name: Install python
         uses: actions/setup-python@v4
