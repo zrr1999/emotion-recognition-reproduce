@@ -72,10 +72,10 @@ jobs:
       - name: Create preview page
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: preview
           publish_branch: vercel
-          cname: nyakku.moe
+          cname: research.bone6.top
           force_orphan: true
           commit_message: ':rocket: deploy: '
           user_name: 'github-actions[bot]'
