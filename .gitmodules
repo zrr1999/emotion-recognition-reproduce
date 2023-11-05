@@ -30,3 +30,6 @@
 [submodule "projects/TodKat"]
 	path = projects/TodKat
 	url = https://github.com/emotion-recognition-reproduce/TodKat
+[submodule "projects/Emotion_not_One"]
+	path = projects/Emotion_not_One
+	url = https://github.com/emotion-recognition-reproduce/Emotion_not_One

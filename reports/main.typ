@@ -39,9 +39,9 @@
   [CoMPM], [单模态], [], [#work_in_report],
   [SPCL], [多模态], [], [#work_in_report],
   [SACL-LSTM], [单模态], [], [#work_in_report],
-  [EmotionFlow], [], [], [#work_in_program],
-  [Emotion-not-One], [], [], [#work_in_program],
-  [DialogueCRN], [], [], [#work_in_report],
+  [EmotionFlow], [], [], [#work_in_report],
+  [Emotion-not-One], [], [], [#work_in_report],
+  [DialogueCRN], [多模态], [由感知阶段、认知阶段和情绪分类器三部分组成], [#compeleted],
   [TodKat], [单模态], [使用 Transformer 编解码器机制], [#compeleted],
 )
 // typstfmt::on
