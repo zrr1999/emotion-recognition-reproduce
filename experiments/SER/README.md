@@ -1,0 +1,2 @@
+SER(Speech Romotion Recognition)
+使用公开数据集RAVDESS的语音部分，使用LibROSA导入音频数据并提取MFCC格式信息，使用深度卷积神经网络对音频中的情绪进行分类。
