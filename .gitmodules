@@ -33,3 +33,12 @@
 [submodule "projects/Emotion_not_One"]
 	path = projects/Emotion_not_One
 	url = https://github.com/emotion-recognition-reproduce/Emotion_not_One
+[submodule "projects/facial-emotion-recognition"]
+	path = projects/facial-emotion-recognition
+	url = https://github.com/emotion-recognition-reproduce/facial-emotion-recognition
+[submodule "projects/Emotion"]
+	path = projects/Emotion
+	url = https://github.com/emotion-recognition-reproduce/Emotion
+[submodule "projects/MMEmotionRecognition"]
+	path = projects/MMEmotionRecognition
+	url = https://github.com/emotion-recognition-reproduce/MMEmotionRecognition
